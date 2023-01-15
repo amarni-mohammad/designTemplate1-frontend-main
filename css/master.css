@@ -1,0 +1,394 @@
+/* start variable */
+:root{
+    --main-color: #10cab7;
+}
+/* end variable */
+/* start global */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.parent{
+    margin: 0;
+    width: 100%;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width : 767px){
+    .container{
+        width: 100%;
+    }
+}
+
+@media (min-width : 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+@media (min-width : 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+@media (min-width : 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/* end global */
+
+/* start header */
+
+.header{    
+    padding: 10px 40px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.header .logo{
+    width: 80px;
+}
+
+.header .links{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: 30px;
+}
+
+.header .links .icon span{
+    background-color: black;
+    display: inline-block;
+    height: 2px;
+}
+
+.header .links .icon span:first-child{
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2){
+    width: 60%;
+    transition: .3s;
+}
+
+.header .links .icon:hover span:nth-child(2){
+    width: 100%;
+}
+
+.header .links .icon span:last-child{
+    width: 100%;
+}
+
+
+.header .links ul{
+    display: none;
+    z-index: 2;
+    list-style-type: none;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: darkgrey;
+
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header .links:hover ul{
+    display: inline-block;
+}
+
+.header .links ul li{
+    width: 100%;
+}
+
+.header .links ul li:not(:last-child){
+    border-bottom: #333;
+    border-bottom-width:1px ;
+    border-bottom-style: solid ;
+}
+
+.header .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent silver transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.header .links ul a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: #333;
+    transition: .3s;
+
+}
+
+.header .links ul a:hover{
+    padding-left: 25px;
+}
+
+/* end header */
+/* start landing */
+
+.landing{
+    background-image: url(../images/mountains.jpg);
+    height: calc(100vh - 65px);
+    position: relative;
+}
+
+.landing .text{
+    position: absolute;
+    bottom: 50%;
+    right:50%;
+    transform: translate(50%,50%);
+    text-align: center;
+    line-height: 50px;
+    width: 500px;
+}
+
+.landing .text h1{
+    margin: 0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.landing .text p {
+    width: 290px;
+    text-align: center;
+    margin-right: 0px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+/* end landing */
+/* start features */
+.features{
+    margin-top: 30px;
+    background-color:#7777770f;
+}
+
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+    gap: 20px;
+    padding: 50px 0 20px 0;
+}
+
+.features .container .feat{
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+.features .container .feat i{
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.features .container .feat h3{
+    font-weight: 800;
+}
+
+.features .container .feat p{
+    font-size: 16px;
+    line-height: 24px;
+    color:#777;
+}
+
+/* end features */
+/*start special heading*/
+
+.start-section{
+    position: relative;
+    text-align: center;
+    padding: 50px 0 35px 0;
+}
+
+.special-heading{
+    margin: auto;
+    font-size: 100px;
+    color: #77777738;
+    letter-spacing: -10px;
+}
+
+.special-heading + p{
+    margin: auto;
+    transform: translate(0,-30px);
+    color: #777;
+}
+
+/*end special heading*/
+
+/*start services*/
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 20px 20px;
+    padding: 0px 20px;
+    margin-bottom: 50px;
+}
+.services .container .col{
+    width: 300px;
+    margin: auto;
+    position: relative;
+}
+.services .container .col .peace{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.services .container .col .peace h3{
+    margin-top: 0;
+}
+.services .container .col .peace p{
+    font-size: 12px;
+    font-weight: 100;
+}
+.services .container .col div i{
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+.services img{
+    position: absolute;
+    top: -10px;
+    width: 200px;
+    margin: auto;
+    height: 250px;
+    position: relative;
+}
+
+.services .image::before{
+    display: inline-block;
+    position: absolute;
+    content: "";
+    background-color: var(--main-color);
+    height: calc(100% + 50px);
+    width: 90px;
+    top: -38px;
+    right: 63px;
+}
+
+@media (max-width : 1200px){
+    .services .image{
+        display: none;
+    }
+}
+/*end services*/
+/*start portfoilo*/
+
+.portfoilo{
+    background-color:#7777770f;
+    padding-bottom: 25px;
+}
+
+.portfoilo .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.portfoilo .container .shape{
+    background-color: white;
+    width: 300px;
+    margin: auto;
+    
+}
+
+.portfoilo .container .shape .text{
+    padding: 10px;
+}
+.portfoilo .container .shape .text h3{
+    margin: 0;
+}
+.portfoilo .container .shape .text p{
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.portfoilo .container .shape img{
+    max-width: 100%;
+}
+
+/*end portfoilo*/
+/*start contact*/
+
+.contact .container{
+    text-align: center;
+}
+
+.contact .container h3{
+    color: var(--main-color);
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.contact .container a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+}
+
+.contact .container .links p{
+    display: inline-block;
+    color: var(--main-color);
+}
+
+.contact .container .links i{
+    color: var(--main-color);
+    margin-left: 5px;
+}
+
+/*end contact*/
+
+/*start footer*/
+.footer{
+    margin-top: 15px;
+    background-color: #10cab7;
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-align: center;
+}
+/*end footer*/
